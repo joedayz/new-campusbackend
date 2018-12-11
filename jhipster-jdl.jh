@@ -1,0 +1,127 @@
+
+entity Curso{
+	titulo String required maxlength(200),
+    tituloFooter String maxlength(200),
+    keyCurso String required maxlength(100), 
+    destacado Boolean,
+    status Boolean,
+}
+
+entity DatosCurso {
+
+	descripcion TextBlob, 
+    instructor String maxlength(250),
+    metodologia String maxlength(250),
+    participantes String maxlength(250),
+    requisitos String maxlength(500),
+    syllabus String maxlength(250),
+    costo String maxlength(250),
+    duracion String maxlength(250),
+    fechaInscripcion String maxlength(250),
+    horarios String maxlength(250),
+    numeroParticipantes  String maxlength(250),
+    membresiaAnual String maxlength(250),
+    
+}
+
+entity TemasCurso{
+
+	
+	
+	titulo String maxlength(250),
+    descripcion TextBlob, 
+	url String maxlength(250),
+    orden Double, 
+	status Boolean, 
+}
+
+
+entity Blog {
+    titulo String required maxlength(250) minlength(3),
+    autor String required maxlength(250) minlength(3),
+    descripcion TextBlob,
+    url String required maxlength(250),
+    fecha ZonedDateTime required,
+    status Boolean,
+    
+}
+
+entity Hangout {
+    titulo String required maxlength(250) minlength(3),
+    ponente String required maxlength(250) minlength(3),
+    descripcion TextBlob,
+    url String required maxlength(250),
+    fecha ZonedDateTime required,
+    status Boolean,
+    
+}
+
+entity GeneralTable {
+    code String required maxlength(50),
+    tabla String required maxlength(250),
+    valor String required maxlength(50), 
+    orden Double,
+    status Boolean,
+}
+
+entity Module {
+    code String required maxlength(50),
+    nombre String required maxlength(250),
+    url String required maxlength(50), 
+    menuLabel String maxlength(150), 
+    menuOrden Double, 
+    orden Double,
+    visible Boolean, 
+    status Boolean,
+}
+
+entity Portada {
+
+	tituloFoto String maxlength(50),
+    urlFoto String required maxlength(50),
+    status Boolean,
+
+}
+
+entity ResetRegistry{
+
+	token String maxlength(250),
+    userName String maxlength(50),
+    status Boolean
+
+}
+
+entity TipoCurso {
+	
+    nombre String maxlength(50),
+    code String maxlength(1),
+    status Boolean
+
+}
+
+entity Permission {
+	roleName String required maxlength(50),
+	permissionType String maxlength(1),
+}
+
+
+
+relationship OneToMany {
+  Module{module} to Module{padre(nombre)},
+  Module{permission} to Permission{moduleId(nombre)},  
+}
+
+relationship ManyToOne {
+	Curso{tipoCurso(nombre)} to TipoCurso,
+    DatosCurso{curso(titulo)} to Curso, 
+    TemasCurso{curso(titulo)} to Curso, 
+}
+
+
+
+
+
+
+
+
+paginate Blog, Hangout with infinite-scroll
