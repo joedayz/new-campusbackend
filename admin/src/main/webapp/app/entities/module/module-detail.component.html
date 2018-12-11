@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="module">
+            <h2><span jhiTranslate="adminApp.module.detail.title">Module</span> {{module.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="adminApp.module.code">Code</span></dt>
+                <dd>
+                    <span>{{module.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.module.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{module.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.module.url">Url</span></dt>
+                <dd>
+                    <span>{{module.url}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.module.menuLabel">Menu Label</span></dt>
+                <dd>
+                    <span>{{module.menuLabel}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.module.menuOrden">Menu Orden</span></dt>
+                <dd>
+                    <span>{{module.menuOrden}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.module.orden">Orden</span></dt>
+                <dd>
+                    <span>{{module.orden}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.module.visible">Visible</span></dt>
+                <dd>
+                    <span>{{module.visible}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.module.status">Status</span></dt>
+                <dd>
+                    <span>{{module.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.module.padre">Padre</span></dt>
+                <dd>
+                    <div *ngIf="module.padre">
+                        <a [routerLink]="['/module', module.padre?.id, 'view']">{{module.padre?.nombre}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/module', module.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

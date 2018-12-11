@@ -1,0 +1,33 @@
+{
+    "adminApp": {
+        "datosCurso": {
+            "home": {
+                "title": "Datos Cursos",
+                "createLabel": "Create a new Datos Curso",
+                "createOrEditLabel": "Create or edit a Datos Curso"
+            },
+            "created": "A new Datos Curso is created with identifier {{ param }}",
+            "updated": "A Datos Curso is updated with identifier {{ param }}",
+            "deleted": "A Datos Curso is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Datos Curso {{ id }}?"
+            },
+            "detail": {
+                "title": "Datos Curso"
+            },
+            "descripcion": "Descripcion",
+            "instructor": "Instructor",
+            "metodologia": "Metodologia",
+            "participantes": "Participantes",
+            "requisitos": "Requisitos",
+            "syllabus": "Syllabus",
+            "costo": "Costo",
+            "duracion": "Duracion",
+            "fechaInscripcion": "Fecha Inscripcion",
+            "horarios": "Horarios",
+            "numeroParticipantes": "Numero Participantes",
+            "membresiaAnual": "Membresia Anual",
+            "curso": "Curso"
+        }
+    }
+}

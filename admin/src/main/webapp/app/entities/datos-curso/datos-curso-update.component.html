@@ -1,0 +1,157 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-datos-curso-heading" jhiTranslate="adminApp.datosCurso.home.createOrEditLabel">Create or edit a Datos Curso</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!datosCurso.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="datosCurso.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="adminApp.datosCurso.descripcion" for="field_descripcion">Descripcion</label>
+                    <textarea class="form-control" name="descripcion" id="field_descripcion"
+                        [(ngModel)]="datosCurso.descripcion" ></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="adminApp.datosCurso.instructor" for="field_instructor">Instructor</label>
+                    <input type="text" class="form-control" name="instructor" id="field_instructor"
+                        [(ngModel)]="datosCurso.instructor" maxlength="250"/>
+                    <div [hidden]="!(editForm.controls.instructor?.dirty && editForm.controls.instructor?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.instructor?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 250 }">
+                        This field cannot be longer than 250 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="adminApp.datosCurso.metodologia" for="field_metodologia">Metodologia</label>
+                    <input type="text" class="form-control" name="metodologia" id="field_metodologia"
+                        [(ngModel)]="datosCurso.metodologia" maxlength="250"/>
+                    <div [hidden]="!(editForm.controls.metodologia?.dirty && editForm.controls.metodologia?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.metodologia?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 250 }">
+                        This field cannot be longer than 250 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="adminApp.datosCurso.participantes" for="field_participantes">Participantes</label>
+                    <input type="text" class="form-control" name="participantes" id="field_participantes"
+                        [(ngModel)]="datosCurso.participantes" maxlength="250"/>
+                    <div [hidden]="!(editForm.controls.participantes?.dirty && editForm.controls.participantes?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.participantes?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 250 }">
+                        This field cannot be longer than 250 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="adminApp.datosCurso.requisitos" for="field_requisitos">Requisitos</label>
+                    <input type="text" class="form-control" name="requisitos" id="field_requisitos"
+                        [(ngModel)]="datosCurso.requisitos" maxlength="500"/>
+                    <div [hidden]="!(editForm.controls.requisitos?.dirty && editForm.controls.requisitos?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.requisitos?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 500 }">
+                        This field cannot be longer than 500 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="adminApp.datosCurso.syllabus" for="field_syllabus">Syllabus</label>
+                    <input type="text" class="form-control" name="syllabus" id="field_syllabus"
+                        [(ngModel)]="datosCurso.syllabus" maxlength="250"/>
+                    <div [hidden]="!(editForm.controls.syllabus?.dirty && editForm.controls.syllabus?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.syllabus?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 250 }">
+                        This field cannot be longer than 250 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="adminApp.datosCurso.costo" for="field_costo">Costo</label>
+                    <input type="text" class="form-control" name="costo" id="field_costo"
+                        [(ngModel)]="datosCurso.costo" maxlength="250"/>
+                    <div [hidden]="!(editForm.controls.costo?.dirty && editForm.controls.costo?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.costo?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 250 }">
+                        This field cannot be longer than 250 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="adminApp.datosCurso.duracion" for="field_duracion">Duracion</label>
+                    <input type="text" class="form-control" name="duracion" id="field_duracion"
+                        [(ngModel)]="datosCurso.duracion" maxlength="250"/>
+                    <div [hidden]="!(editForm.controls.duracion?.dirty && editForm.controls.duracion?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.duracion?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 250 }">
+                        This field cannot be longer than 250 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="adminApp.datosCurso.fechaInscripcion" for="field_fechaInscripcion">Fecha Inscripcion</label>
+                    <input type="text" class="form-control" name="fechaInscripcion" id="field_fechaInscripcion"
+                        [(ngModel)]="datosCurso.fechaInscripcion" maxlength="250"/>
+                    <div [hidden]="!(editForm.controls.fechaInscripcion?.dirty && editForm.controls.fechaInscripcion?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.fechaInscripcion?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 250 }">
+                        This field cannot be longer than 250 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="adminApp.datosCurso.horarios" for="field_horarios">Horarios</label>
+                    <input type="text" class="form-control" name="horarios" id="field_horarios"
+                        [(ngModel)]="datosCurso.horarios" maxlength="250"/>
+                    <div [hidden]="!(editForm.controls.horarios?.dirty && editForm.controls.horarios?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.horarios?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 250 }">
+                        This field cannot be longer than 250 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="adminApp.datosCurso.numeroParticipantes" for="field_numeroParticipantes">Numero Participantes</label>
+                    <input type="text" class="form-control" name="numeroParticipantes" id="field_numeroParticipantes"
+                        [(ngModel)]="datosCurso.numeroParticipantes" maxlength="250"/>
+                    <div [hidden]="!(editForm.controls.numeroParticipantes?.dirty && editForm.controls.numeroParticipantes?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.numeroParticipantes?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 250 }">
+                        This field cannot be longer than 250 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="adminApp.datosCurso.membresiaAnual" for="field_membresiaAnual">Membresia Anual</label>
+                    <input type="text" class="form-control" name="membresiaAnual" id="field_membresiaAnual"
+                        [(ngModel)]="datosCurso.membresiaAnual" maxlength="250"/>
+                    <div [hidden]="!(editForm.controls.membresiaAnual?.dirty && editForm.controls.membresiaAnual?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.membresiaAnual?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 250 }">
+                        This field cannot be longer than 250 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="adminApp.datosCurso.curso" for="field_curso">Curso</label>
+                    <select class="form-control" id="field_curso" name="curso" [(ngModel)]="datosCurso.curso" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="cursoOption.id === datosCurso.curso?.id ? datosCurso.curso : cursoOption" *ngFor="let cursoOption of cursos; trackBy: trackCursoById">{{cursoOption.titulo}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

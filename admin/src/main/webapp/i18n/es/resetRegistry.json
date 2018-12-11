@@ -1,0 +1,23 @@
+{
+    "adminApp": {
+        "resetRegistry": {
+            "home": {
+                "title": "Reset Registries",
+                "createLabel": "Crear nuevo Reset Registry",
+                "createOrEditLabel": "Crear o editar Reset Registry"
+            },
+            "created": "Un nuevo Reset Registry ha sido creado con el identificador {{ param }}",
+            "updated": "Un Reset Registry ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Reset Registry ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Reset Registry {{ id }}?"
+            },
+            "detail": {
+                "title": "Reset Registry"
+            },
+            "token": "Token",
+            "userName": "User Name",
+            "status": "Status"
+        }
+    }
+}

@@ -1,0 +1,77 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="datosCurso">
+            <h2><span jhiTranslate="adminApp.datosCurso.detail.title">Datos Curso</span> {{datosCurso.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="adminApp.datosCurso.descripcion">Descripcion</span></dt>
+                <dd>
+                    <span>{{datosCurso.descripcion}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.datosCurso.instructor">Instructor</span></dt>
+                <dd>
+                    <span>{{datosCurso.instructor}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.datosCurso.metodologia">Metodologia</span></dt>
+                <dd>
+                    <span>{{datosCurso.metodologia}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.datosCurso.participantes">Participantes</span></dt>
+                <dd>
+                    <span>{{datosCurso.participantes}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.datosCurso.requisitos">Requisitos</span></dt>
+                <dd>
+                    <span>{{datosCurso.requisitos}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.datosCurso.syllabus">Syllabus</span></dt>
+                <dd>
+                    <span>{{datosCurso.syllabus}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.datosCurso.costo">Costo</span></dt>
+                <dd>
+                    <span>{{datosCurso.costo}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.datosCurso.duracion">Duracion</span></dt>
+                <dd>
+                    <span>{{datosCurso.duracion}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.datosCurso.fechaInscripcion">Fecha Inscripcion</span></dt>
+                <dd>
+                    <span>{{datosCurso.fechaInscripcion}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.datosCurso.horarios">Horarios</span></dt>
+                <dd>
+                    <span>{{datosCurso.horarios}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.datosCurso.numeroParticipantes">Numero Participantes</span></dt>
+                <dd>
+                    <span>{{datosCurso.numeroParticipantes}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.datosCurso.membresiaAnual">Membresia Anual</span></dt>
+                <dd>
+                    <span>{{datosCurso.membresiaAnual}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.datosCurso.curso">Curso</span></dt>
+                <dd>
+                    <div *ngIf="datosCurso.curso">
+                        <a [routerLink]="['/curso', datosCurso.curso?.id, 'view']">{{datosCurso.curso?.titulo}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/datos-curso', datosCurso.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

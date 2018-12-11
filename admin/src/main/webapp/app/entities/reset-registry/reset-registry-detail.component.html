@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="resetRegistry">
+            <h2><span jhiTranslate="adminApp.resetRegistry.detail.title">Reset Registry</span> {{resetRegistry.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="adminApp.resetRegistry.token">Token</span></dt>
+                <dd>
+                    <span>{{resetRegistry.token}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.resetRegistry.userName">User Name</span></dt>
+                <dd>
+                    <span>{{resetRegistry.userName}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.resetRegistry.status">Status</span></dt>
+                <dd>
+                    <span>{{resetRegistry.status}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/reset-registry', resetRegistry.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="adminApp.datosCurso.home.title">Datos Cursos</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-datos-curso" [routerLink]="['/datos-curso/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="adminApp.datosCurso.home.createLabel">
+            Create new Datos Curso
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="datosCursos">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="adminApp.datosCurso.descripcion">Descripcion</span></th>
+            <th><span jhiTranslate="adminApp.datosCurso.instructor">Instructor</span></th>
+            <th><span jhiTranslate="adminApp.datosCurso.metodologia">Metodologia</span></th>
+            <th><span jhiTranslate="adminApp.datosCurso.participantes">Participantes</span></th>
+            <th><span jhiTranslate="adminApp.datosCurso.requisitos">Requisitos</span></th>
+            <th><span jhiTranslate="adminApp.datosCurso.syllabus">Syllabus</span></th>
+            <th><span jhiTranslate="adminApp.datosCurso.costo">Costo</span></th>
+            <th><span jhiTranslate="adminApp.datosCurso.duracion">Duracion</span></th>
+            <th><span jhiTranslate="adminApp.datosCurso.fechaInscripcion">Fecha Inscripcion</span></th>
+            <th><span jhiTranslate="adminApp.datosCurso.horarios">Horarios</span></th>
+            <th><span jhiTranslate="adminApp.datosCurso.numeroParticipantes">Numero Participantes</span></th>
+            <th><span jhiTranslate="adminApp.datosCurso.membresiaAnual">Membresia Anual</span></th>
+            <th><span jhiTranslate="adminApp.datosCurso.curso">Curso</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let datosCurso of datosCursos ;trackBy: trackId">
+                <td><a [routerLink]="['/datos-curso', datosCurso.id, 'view' ]">{{datosCurso.id}}</a></td>
+                <td>{{datosCurso.descripcion}}</td>
+                <td>{{datosCurso.instructor}}</td>
+                <td>{{datosCurso.metodologia}}</td>
+                <td>{{datosCurso.participantes}}</td>
+                <td>{{datosCurso.requisitos}}</td>
+                <td>{{datosCurso.syllabus}}</td>
+                <td>{{datosCurso.costo}}</td>
+                <td>{{datosCurso.duracion}}</td>
+                <td>{{datosCurso.fechaInscripcion}}</td>
+                <td>{{datosCurso.horarios}}</td>
+                <td>{{datosCurso.numeroParticipantes}}</td>
+                <td>{{datosCurso.membresiaAnual}}</td>
+                <td>
+                    <div *ngIf="datosCurso.curso">
+                        <a [routerLink]="['../curso', datosCurso.curso?.id, 'view' ]" >{{datosCurso.curso?.titulo}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/datos-curso', datosCurso.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/datos-curso', datosCurso.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'datos-curso/'+ datosCurso.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="hangout">
+            <h2><span jhiTranslate="adminApp.hangout.detail.title">Hangout</span> {{hangout.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="adminApp.hangout.titulo">Titulo</span></dt>
+                <dd>
+                    <span>{{hangout.titulo}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.hangout.ponente">Ponente</span></dt>
+                <dd>
+                    <span>{{hangout.ponente}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.hangout.descripcion">Descripcion</span></dt>
+                <dd>
+                    <span>{{hangout.descripcion}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.hangout.url">Url</span></dt>
+                <dd>
+                    <span>{{hangout.url}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.hangout.fecha">Fecha</span></dt>
+                <dd>
+                    <span>{{hangout.fecha}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.hangout.status">Status</span></dt>
+                <dd>
+                    <span>{{hangout.status}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/hangout', hangout.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-permission-heading" jhiTranslate="adminApp.permission.home.createOrEditLabel">Create or edit a Permission</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!permission.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="permission.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="adminApp.permission.roleName" for="field_roleName">Role Name</label>
+                    <input type="text" class="form-control" name="roleName" id="field_roleName"
+                        [(ngModel)]="permission.roleName" required maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.roleName?.dirty && editForm.controls.roleName?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.roleName?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.roleName?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="adminApp.permission.permissionType" for="field_permissionType">Permission Type</label>
+                    <input type="text" class="form-control" name="permissionType" id="field_permissionType"
+                        [(ngModel)]="permission.permissionType" maxlength="1"/>
+                    <div [hidden]="!(editForm.controls.permissionType?.dirty && editForm.controls.permissionType?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.permissionType?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 1 }">
+                        This field cannot be longer than 1 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="adminApp.permission.moduleId" for="field_moduleId">Module Id</label>
+                    <select class="form-control" id="field_moduleId" name="moduleId" [(ngModel)]="permission.moduleId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="moduleOption.id === permission.moduleId?.id ? permission.moduleId : moduleOption" *ngFor="let moduleOption of modules; trackBy: trackModuleById">{{moduleOption.nombre}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

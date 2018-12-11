@@ -1,0 +1,23 @@
+{
+    "adminApp": {
+        "portada": {
+            "home": {
+                "title": "Portadas",
+                "createLabel": "Crear nuevo Portada",
+                "createOrEditLabel": "Crear o editar Portada"
+            },
+            "created": "Un nuevo Portada ha sido creado con el identificador {{ param }}",
+            "updated": "Un Portada ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Portada ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Portada {{ id }}?"
+            },
+            "detail": {
+                "title": "Portada"
+            },
+            "tituloFoto": "Titulo Foto",
+            "urlFoto": "Url Foto",
+            "status": "Status"
+        }
+    }
+}

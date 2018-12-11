@@ -1,0 +1,26 @@
+{
+    "adminApp": {
+        "temasCurso": {
+            "home": {
+                "title": "Temas Cursos",
+                "createLabel": "Create a new Temas Curso",
+                "createOrEditLabel": "Create or edit a Temas Curso"
+            },
+            "created": "A new Temas Curso is created with identifier {{ param }}",
+            "updated": "A Temas Curso is updated with identifier {{ param }}",
+            "deleted": "A Temas Curso is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Temas Curso {{ id }}?"
+            },
+            "detail": {
+                "title": "Temas Curso"
+            },
+            "titulo": "Titulo",
+            "descripcion": "Descripcion",
+            "url": "Url",
+            "orden": "Orden",
+            "status": "Status",
+            "curso": "Curso"
+        }
+    }
+}

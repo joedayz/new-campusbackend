@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="portada">
+            <h2><span jhiTranslate="adminApp.portada.detail.title">Portada</span> {{portada.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="adminApp.portada.tituloFoto">Titulo Foto</span></dt>
+                <dd>
+                    <span>{{portada.tituloFoto}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.portada.urlFoto">Url Foto</span></dt>
+                <dd>
+                    <span>{{portada.urlFoto}}</span>
+                </dd>
+                <dt><span jhiTranslate="adminApp.portada.status">Status</span></dt>
+                <dd>
+                    <span>{{portada.status}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/portada', portada.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

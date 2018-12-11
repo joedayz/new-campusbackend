@@ -1,0 +1,85 @@
+{
+    "name": "Module",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "nombre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 250
+        },
+        {
+            "fieldName": "url",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "menuLabel",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 150
+        },
+        {
+            "fieldName": "menuOrden",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "orden",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "visible",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "module",
+            "otherEntityName": "module",
+            "otherEntityRelationshipName": "padre"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "permission",
+            "otherEntityName": "permission",
+            "otherEntityRelationshipName": "moduleId"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "padre",
+            "otherEntityName": "module",
+            "otherEntityField": "nombre"
+        }
+    ],
+    "changelogDate": "20181211055831",
+    "entityTableName": "module",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

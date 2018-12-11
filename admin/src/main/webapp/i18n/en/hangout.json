@@ -1,0 +1,26 @@
+{
+    "adminApp": {
+        "hangout": {
+            "home": {
+                "title": "Hangouts",
+                "createLabel": "Create a new Hangout",
+                "createOrEditLabel": "Create or edit a Hangout"
+            },
+            "created": "A new Hangout is created with identifier {{ param }}",
+            "updated": "A Hangout is updated with identifier {{ param }}",
+            "deleted": "A Hangout is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Hangout {{ id }}?"
+            },
+            "detail": {
+                "title": "Hangout"
+            },
+            "titulo": "Titulo",
+            "ponente": "Ponente",
+            "descripcion": "Descripcion",
+            "url": "Url",
+            "fecha": "Fecha",
+            "status": "Status"
+        }
+    }
+}

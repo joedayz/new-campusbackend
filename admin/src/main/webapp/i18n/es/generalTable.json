@@ -1,0 +1,25 @@
+{
+    "adminApp": {
+        "generalTable": {
+            "home": {
+                "title": "General Tables",
+                "createLabel": "Crear nuevo General Table",
+                "createOrEditLabel": "Crear o editar General Table"
+            },
+            "created": "Un nuevo General Table ha sido creado con el identificador {{ param }}",
+            "updated": "Un General Table ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un General Table ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar General Table {{ id }}?"
+            },
+            "detail": {
+                "title": "General Table"
+            },
+            "code": "Code",
+            "tabla": "Tabla",
+            "valor": "Valor",
+            "orden": "Orden",
+            "status": "Status"
+        }
+    }
+}

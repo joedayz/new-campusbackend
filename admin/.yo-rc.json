@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "pe.joedayz.admin",
+      "nativeLanguage": "es"
+    },
+    "jhipsterVersion": "5.7.0",
+    "applicationType": "monolith",
+    "baseName": "admin",
+    "packageName": "pe.joedayz.admin",
+    "packageFolder": "pe/joedayz/admin",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NTZmMDVkNDUzNWM5NDJjNWNhYzg2YjUzNTAyNDE1MTM1NjU0YmYxNjY3NDYyZTA4NDllYmUyNzA0ZmIzODJjZjhiNmE4MTZhMjY2ZDU1N2E4ZTk3MjY4N2U5YWM1NzJmMDYxYjA0Y2IwMTRkNzAzZWViYzJlYWFmMTc2OTk4NTA=",
+    "clientFramework": "angularX",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "es",
+    "languages": [
+      "es",
+      "en"
+    ]
+  }
+}

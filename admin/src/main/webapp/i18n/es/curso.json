@@ -1,0 +1,26 @@
+{
+    "adminApp": {
+        "curso": {
+            "home": {
+                "title": "Cursos",
+                "createLabel": "Crear nuevo Curso",
+                "createOrEditLabel": "Crear o editar Curso"
+            },
+            "created": "Un nuevo Curso ha sido creado con el identificador {{ param }}",
+            "updated": "Un Curso ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Curso ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Curso {{ id }}?"
+            },
+            "detail": {
+                "title": "Curso"
+            },
+            "titulo": "Titulo",
+            "tituloFooter": "Titulo Footer",
+            "keyCurso": "Key Curso",
+            "destacado": "Destacado",
+            "status": "Status",
+            "tipoCurso": "Tipo Curso"
+        }
+    }
+}
